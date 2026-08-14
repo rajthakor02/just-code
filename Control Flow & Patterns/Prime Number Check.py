@@ -1,10 +1,14 @@
 def is_prime(n):
-    for i in range(2,n):
+    if n < 2:
+        return False
+    elif n in (2,3):
+        return True
+    elif n % 2 == 0:
+        return False
+    for i in range(3, int(n**0.5) + 1, 2):
         if n % i == 0:
-            print("Not prime.")
-            break
-    else:
-        print("Prime")
+            return False
+    return True
 
 def main():
     while True:
