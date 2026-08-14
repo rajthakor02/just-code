@@ -25,7 +25,8 @@ def main1():
         if is_armstrong(n):
             print(f"The number {n} is armstrong number.")
         else:
-            print(f"The number {n} is not armstrong number.")    
+            print(f"The number {n} is not armstrong number.") 
+        main()   
 
 def total(start, end):
     armstrong = [n for n in range(start, end+1) if is_armstrong(n)]
@@ -54,17 +55,12 @@ def main():
             n = int(input("Select the option number: "))
         except ValueError:
             print("just select one number between 1 and 2!")
+            continue
 
         if n == 1:
             main1()
         elif n == 2:
             custome_range()
         elif n == 3:
-            break
-        else:
-            print("just select one number between 1 and 2!")
-            return
-
-        if input("Do you want to continue? (yes or no) :").strip().lower() != "yes":
             break
 main()
