@@ -14,7 +14,7 @@ def is_armstrong(n):
 
     return total == n
 
-def main():
+def main1():
     while True:
         try:
             n = int(input("Enter the number: "))
@@ -26,6 +26,44 @@ def main():
             print(f"The number {n} is armstrong number.")
         else:
             print(f"The number {n} is not armstrong number.")    
+
+def total(start, end):
+    armstrong = [n for n in range(start, end+1) if is_armstrong(n)]
+    print(armstrong)
+
+def custome_range():
+    while True:
+        try:
+            start = int(input("Enter a start number: "))
+            end = int(input("Enter a last number: "))
+        except ValueError:
+            print("Enter correct value!")
+            continue
+        total(start, end)
+        main()
+
+def main():
+    menu = (
+        "\n1. Know about just one number.\n"
+        "2. Want to find armstrong in custome range.\n"
+        "3. For exit."
+    )
+    print(menu)
+    while True:
+        try:
+            n = int(input("Select the option number: "))
+        except ValueError:
+            print("just select one number between 1 and 2!")
+
+        if n == 1:
+            main1()
+        elif n == 2:
+            custome_range()
+        elif n == 3:
+            break
+        else:
+            print("just select one number between 1 and 2!")
+            return
 
         if input("Do you want to continue? (yes or no) :").strip().lower() != "yes":
             break
