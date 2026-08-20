@@ -13,8 +13,8 @@ def is_palindrome(s):
         left += 1
         right -= 1
     return True
-s = input("Enter a string: ")
+s = "@@ A Ma n: nama"
 if is_palindrome(s):
     print(f"{s} is palindrome.")
 else :
-    print(f"{s} is not palindrome.")
+    print(f"{s} is not palindrom.")
